@@ -65,7 +65,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>io.hexlet.java.links.Main</mainClass>
+                    <mainClass>io.hexlet.java.links.RestApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

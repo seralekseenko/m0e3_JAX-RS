@@ -6,7 +6,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
-import io.hexlet.java.links.Main;
+import io.hexlet.java.links.RestApplication;
 import org.glassfish.grizzly.http.server.HttpServer;
 
 import org.junit.After;
@@ -22,9 +22,9 @@ public class LinkResourceTest {
 
     @Before
     public void setUp() throws Exception {
-        server = Main.startServer();
+        server = RestApplication.startServer();
         final Client c = ClientBuilder.newClient();
-        target = c.target(Main.BASE_URI);
+        target = c.target(RestApplication.BASE_URI);
     }
 
     @After
