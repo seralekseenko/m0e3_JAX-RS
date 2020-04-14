@@ -1,11 +1,32 @@
 ## Это учебный код из Модуль `0. Урок 3. Java EE и JAX-RS`. ##
 
-Для успешной работы кода необходим
+Для успешной работы программы необходим
 Maven([как установить на win10](https://www.youtube.com/watch?v=HaCyw2PlQAQ&list=PLsQAG1V_t58DB5mSct0PGrq4u7biH2BuP) ).
+ В папке с pom.xml вводим команду `mvn exec:java` — проект собирается и запускается. 
+ Это может занять продолжительное время, если сборщику придется качать зависимости.
+
+
+При открытии проекта в IDEA необходимо импортировать структуру проекта из pom.xml, IDEA
+предлагает это автоматически, не проморгайте.
+
+Запустить приложение можно как с помощью `main`-метода в классе `Main`, так и с помощью все той же
+команды `mvn exec:java` в папке с pom.xml, или двойным кликом на плагине `exec:java`, справа 
+в окне Maven.
 
 Для взаимодействия с этим сервером необходимо приложение
-[Advanced REST Client](https://install.advancedrestclient.com/#/install).
-(Интерфейс Advanced REST Client отличается УЖЕ от показанного в уроке)
+[Advanced REST Client (ARC)](https://install.advancedrestclient.com/#/install).
 
-[Там доступны](https://github.com/advanced-rest-client/arc-electron/releases)
- сборки для различных платформ!
+[Альтернативные сборки ARC](https://github.com/advanced-rest-client/arc-electron/releases),
+для различных операционных систем.
+
+Сегодня интерфейс Advanced REST Client уже отличается от показанного в уроке. 
+
+Для команды `PUT`: 
+- добавьте HEADER с именем `content-type`, а его параметром будет `text/plain`:
+- в `BODY` уже пишите текст, который будет отправлен на сервер;
+- команду отправляем по адресу `http://localhost:8080/api/links`.
+
+Для команды `GET` просто указываем адрес `http://localhost:8080/api/links/NUMBER`.
+
+**NUMBER** — это число, которое вернула одна из команд `PUT` в текущем запуске сервера.
+
