@@ -1,4 +1,8 @@
 test:
-	mvn -o clean
-	mvn -o compile
-	mvn -o test
+	mvn clean
+	mvn compile
+	mvn test
+start:
+	mvn clean
+	mvn compile
+	mvn exec:java
